@@ -1,0 +1,1 @@
+-functions können auch ein Defaultparameter sein

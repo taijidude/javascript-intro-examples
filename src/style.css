@@ -1,0 +1,30 @@
+:root {
+    --airhacks-background: green;
+}
+
+body {
+    font-family: sans-serif;
+}
+div {
+    background-color:var(--airhacks-background);
+}
+
+.content {
+    background-color: red;
+}
+
+#last {
+    background-color: lightcoral;  
+    position: absolute;  
+    top: 1rem;
+    left: 2rem;
+}
+
+
+#detail {
+    background-color: yellow;
+}
+
+.mono {
+    font-family: monospace;
+}
