@@ -180,4 +180,77 @@ div.dispatchEvent(customFire);
 
 ```
 
-Next section: 15
+## Event Listener
+- On Custom Elements i can only go with addListener
+
+```javascript
+let div document.querySelector("div"); 
+div.onclick = e => console.log("first", e);
+```
+- onClick only registers a single event listener
+
+```javascript
+let div document.querySelector("div"); 
+div.addEventListner("click", first);
+div.removeEventListener("click", first);
+div.addEventListener("click", e => console.log("second", e));
+div.addEventListner("click", e => console.log("third", e));
+```
+- addEventListener can register multiple listeners
+- CustomEvents müssen mit addEventListener behandelt werden
+
+## onload Event
+
+```javascript
+window.onload = e=> console.log("load", e); 
+window.onunload = e => console.log("unload", e); 
+//Das hier nutzen
+window.addEventListener("load", e => console.log("load",e));
+```
+
+## Mutating the state of UI Components
+
+```javascript
+    let text = document.querySelector("input[type=text]");
+    console.dir(test); 
+    text.value = "hey!";
+```
+
+text leitet von HTMLInput Element ab. HTMLInput Element hat eine value Property. 
+```javascript
+    let button = document.querySelector("input[type=button]"); 
+    button.value = "push me";
+```
+
+## Properties vs Attributes
+
+- Arbeiten mit Attributen
+```javascript
+let time = document.querySelector; 
+time.settAttribute("value", "11:12");
+```
+- Wenn ich direkt Value verwende, kann ich kein setAttribut mehr verwenden
+- Dom Properties verwenden und nicht auf die Attributes verlassen
+
+## Data Attributes
+```javascript
+let  div = document.querySelector("div"); 
+let color = document.querySelector("input[type=color]");
+color.setAttribute("data-message", "hi");
+console.log(color.dataset.message);
+```
+
+## Databinding
+```javascript
+let  div = document.querySelector("div"); 
+let color = document.querySelector("input[type=color]");
+console.log(div.style);
+color.onchange = e => div.style.backgroundColor = e.target.value
+
+let test = document.querySelector("input[type=text]");
+//text.onChange e => div.innerText = e.target.value
+text.onkeypress e => div.innerText = e.target.value
+```
+onkeypress == only ascii elements
+
+Next section: 20
